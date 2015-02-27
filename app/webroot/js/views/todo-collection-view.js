@@ -21,11 +21,11 @@ var app = app || {};
 			return this;
 		},
 		onCreateTodo : function(e) {
+			var that = this;
 			this.todoCollection.create(this.newAttributes(), {
 				wait : true
 			});
-			this.newTodo.val('');
-			this.todoCollection.fetch();
+			that.newTodo.val('');
 		},
 		addOne : function(todo) {
 			var itemView = new app.TodoItemView({
